@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EA3F2BEA-9811-4CA0-97A4-C662E5A3DA3F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>kNet</RootNamespace>
+    <AssemblyName>kNet</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Machine.cs" />
+    <Compile Include="Network\FileSharing\Security\AccessMask.cs" />
+    <Compile Include="Network\FileSharing\Security\AccessControlEntry.cs" />
+    <Compile Include="Network\FileSharing\Security\AccessControlEntryFlags.cs" />
+    <Compile Include="Network\FileSharing\Security\AccessControlEntryType.cs" />
+    <Compile Include="Network\FileSharing\Security\ControlFlags.cs" />
+    <Compile Include="Network\FileSharing\Security\SecurityDescriptor.cs" />
+    <Compile Include="Network\FileSharing\Security\SecurityService.cs" />
+    <Compile Include="Network\FileSharing\Security\Trustee.cs" />
+    <Compile Include="Network\FileSharing\Share.cs" />
+    <Compile Include="Network\FileSharing\ShareCollection.cs" />
+    <Compile Include="Network\FileSharing\ShareService.cs" />
+    <Compile Include="Network\FileSharing\ShareOptions.cs" />
+    <Compile Include="Network\FileSharing\ShareType.cs" />
+    <Compile Include="Network\FileSharing\Win32Share.cs" />
+    <Compile Include="Network\Interop\INetwork.cs" />
+    <Compile Include="Network\Interop\INetworkConnection.cs" />
+    <Compile Include="Network\Interop\INetworkListManager.cs" />
+    <Compile Include="Network\Network.cs" />
+    <Compile Include="Network\Interop\NetworkListManagerClass.cs" />
+    <Compile Include="Network\NetworkCollection.cs" />
+    <Compile Include="Network\NetworkConnection.cs" />
+    <Compile Include="Network\NetworkConnectionCollection.cs" />
+    <Compile Include="Network\NetworkListEnums.cs" />
+    <Compile Include="Network\NetworkListManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\FileSpaceMonitoring\Disk.cs" />
+    <Compile Include="Services\FileSpaceMonitoring\DiskMonitor.cs" />
+    <Compile Include="Services\SSH\Channel.cs" />
+    <Compile Include="Services\SSH\Host.cs" />
+    <Compile Include="Services\SSH\Session.cs" />
+    <Compile Include="Services\SSH\SshClient.cs" />
+    <Compile Include="Sockets\ConnectionManager.cs" />
+    <Compile Include="Sockets\SocketErrorProvider.cs" />
+    <Compile Include="Sockets\SocketEventArgs\SocketConnectEventArgs.cs" />
+    <Compile Include="Sockets\SocketEventArgs\SocketDisconnectEventArgs.cs" />
+    <Compile Include="Sockets\EventSocket.cs" />
+    <Compile Include="Sockets\SocketEventArgs\SocketErrorEventArgs.cs" />
+    <Compile Include="Sockets\SocketEventArgs\SocketListenEventArgs.cs" />
+    <Compile Include="Sockets\SocketEventArgs\SocketNewConnectionEventArgs.cs" />
+    <Compile Include="Sockets\SocketEventArgs\SocketReceiveEventArgs.cs" />
+    <Compile Include="Sockets\SocketEventArgs\SocketSendEventArgs.cs" />
+    <Compile Include="Sockets\State.cs" />
+    <Compile Include="Sockets\Workers\SocketClientWorker.cs" />
+    <Compile Include="Sockets\Workers\SocketListenerWorker.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Network\DomainServices\" />
+    <Folder Include="Services\Compression\zLib\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
